@@ -1,17 +1,24 @@
-#  Internet-advertising-project
+# Internet-advertising-project
 
 #### 介绍
+
 老白带领的互联网广告项目
 
 #### 软件架构
+
 软件架构说明
 
+--analyse 地域分析数据清洗
+
+--dim 地域分析
+
+--tag 用户画像
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. xxxx
+2. xxxx
+3. xxxx
 
 #### 使用说明
 
