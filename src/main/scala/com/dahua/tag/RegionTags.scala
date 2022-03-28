@@ -1,6 +1,5 @@
 package com.dahua.tag
 
-import com.dahua.tools.BaiDuRegionAPI
 import org.apache.commons.lang3.StringUtils
 import org.apache.spark.sql.Row
 
@@ -16,8 +15,8 @@ object RegionTags extends TagTraits {
     val provincename: String = lineRow.getAs[String]("provincename")
     val cityname: String = lineRow.getAs[String]("cityname")
 
-    val jing: String = lineRow.getAs[String]("long")
-    val wei: String = lineRow.getAs[String]("lat")
+    //    val jing: String = lineRow.getAs[String]("long")
+    //    val wei: String = lineRow.getAs[String]("lat")
 
     if (StringUtils.isNotEmpty(provincename)) {
       resultMap += "ZP" + provincename -> 1
@@ -27,12 +26,12 @@ object RegionTags extends TagTraits {
     }
 
     //调用百度逆位API算出经纬附近的商圈
-    var str = wei + "," + jing
-    if (wei.toDouble > 3 && wei.toDouble < 54 && jing.toDouble > 73 && jing.toDouble < 136) {
-      println(str)
-      val quan: String = BaiDuRegionAPI.getBusiness(str)
-      resultMap += "Q" + quan -> 1
-    }
+    //    var str = wei + "," + jing
+    //    if (wei.toDouble > 3 && wei.toDouble < 54 && jing.toDouble > 73 && jing.toDouble < 136) {
+    //      println(str)
+    //      val quan: String = BaiDuRegionAPI.getBusiness(str)
+    //      resultMap += "Q" + quan -> 1
+    //    }
     resultMap
   }
 }
